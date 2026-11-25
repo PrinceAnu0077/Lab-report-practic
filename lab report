@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+class ResultCalculator {
+public:
+  
+    int calculateTotal(int a, int b) {
+        return a + b;
+    }
+
+    
+    int calculateTotal(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    
+    double calculateTotal(double a, double b) {
+        return a + b;
+    }
+};
+
+int main() {
+    ResultCalculator obj;
+
+    cout << "Total of 2 integers: " << obj.calculateTotal(80, 90) << endl;
+    cout << "Total of 3 integers: " << obj.calculateTotal(70, 80, 90) << endl;
+    cout << "Total of 2 doubles: " << obj.calculateTotal(85.5, 90.5) << endl;
+
+    return 0;
+}
