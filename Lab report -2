@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+class DiscountCalculator {
+public:
+    
+    double calculateDiscount(double price) {
+        return price * 0.05;
+    }
+
+    
+    double calculateDiscount(double price, double percent) {
+        return price * (percent / 100);
+    }
+
+  
+    double calculateDiscount(double price, double percent, double coupon) {
+        return (price * (percent / 100)) + coupon;
+    }
+};
+
+int main() {
+    DiscountCalculator dc;
+
+    cout << "Discount 1: " << dc.calculateDiscount(1000) << endl;
+    cout << "Discount 2: " << dc.calculateDiscount(1000, 10) << endl;
+    cout << "Discount 3: " << dc.calculateDiscount(1000, 10, 50) << endl;
+
+    return 0;
+}
