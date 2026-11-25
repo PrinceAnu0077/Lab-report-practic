@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+
+class Vehicle {
+public:
+    virtual double calculateRent() {
+        return 0;
+    }
+};
+
+class Car : public Vehicle {
+private:
+    double rate;
+    int days;
+
+public:
+    Car(double r, int d) {
+        rate = r;
+        days = d;
+    }
+
+    double calculateRent() override {
+        return rate * days;
+    }
+};
+
+class Motorcycle : public Vehicle {
+private:
+    double rate;
+    int hours;
+
+public:
+    Motorcycle(double r, int h) {
+        rate = r;
+        hours = h;
+    }
+
+    double calculateRent() override {
+        return rate * hours;
+    }
+};
+
+int main() {
+    Vehicle* ptr;
+    Car c(1000, 3);        
+    Motorcycle m(150, 4); 
+
+    ptr = &c;
+    cout << "Car Rent: " << ptr->calculateRent() << endl;
+
+    ptr = &m;
+    cout << "Motorcycle Rent: " << ptr->calculateRent() << endl;
+
+    return 0;
+}
